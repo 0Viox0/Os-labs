@@ -3,6 +3,7 @@
 output=$(pwd)
 
 if [ "${output:1:4}" == "home" ]; then
+    pwd
     echo "exited with code 0"
     exit 0
 else

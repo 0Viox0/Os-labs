@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n > ./5_temp_viox_output.txt
+echo -n > ./5_task_output_file.txt
 
 firstOccurence=1
 
@@ -17,6 +17,8 @@ while read -r line; do
         currentArt=$(echo "$line" | awk -F'[:=]' '{print $6}')
         currentSum=$(echo "$currentSum + $currentArt" | bc)
 
+        echo "$line" >> 5_task_output_file.txt
+
         currentCount=$(($currentCount + 1))
         continue
     fi
@@ -26,7 +28,8 @@ while read -r line; do
     if [ "$currentId" != "$previousId" ]; then
         average=$(echo "scale=2; $currentSum / $currentCount" | bc)
 
-        echo "$previousId $average" >> ./5_temp_viox_output.txt
+        echo "Average_Running_Children_of_ParentID=$previousId is $average" >> ./5_task_output_file.txt
+        echo "$line" >> 5_task_output_file.txt
 
         currentSum=0
         currentCount=0
@@ -36,6 +39,7 @@ while read -r line; do
 
         currentCount=$(($currentCount + 1))
     else
+        echo "$line" >> 5_task_output_file.txt
 
         currentArt=$(echo "$line" | awk -F'[:=]' '{print $6}')
         currentSum=$(echo "$currentSum + $currentArt" | bc)

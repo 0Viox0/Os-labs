@@ -5,7 +5,11 @@
 # -qqq without header
 # -n 60 for 60 seconds
 
-top_processes=$(iotop -n 60 -ob -qqq | sort -k6 -nr | head -n 3) 
+top_processes=$(iotop -n 20 -ob -qqq | sort -k4 -nr | head -n 3) 
+
+iotop -n 20 -ob -qqq > iotop_outpuh.txt
+
+max_proc=$(sort -k4 -nr iotop_output.txt | head -n 3)
 
 echo "$top_processes" | while read -r line; do
     pid=$(echo "$line" | awk '{print $1}')

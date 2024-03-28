@@ -1,0 +1,6 @@
+to achieve this result we have to execute crontab -e
+and inside of it we need to write 
+
+*/5 * * * * ~/Viox/university/4th-semester/OsLabs/lab3/1_script.sh
+
+and it will execute every 5 minutes

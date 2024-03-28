@@ -1,1 +1,122 @@
-130
+123
+    PID CMD
+   1863 /lib/systemd/systemd --user
+   1864 (sd-pam)
+   1870 /usr/bin/pipewire
+   1871 /usr/bin/pipewire-media-session
+   1872 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+   1874 /usr/bin/ubuntu-report service
+   1887 /usr/bin/gnome-keyring-daemon --daemonize --login
+   1906 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   1907 /usr/libexec/xdg-document-portal
+   1910 /usr/libexec/xdg-permission-store
+   1943 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+   1947 /usr/libexec/gnome-session-binary --session=ubuntu
+   1995 /usr/libexec/gnome-session-ctl --monitor
+   2005 /usr/libexec/gvfsd
+   2010 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+   2019 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+   2033 /usr/libexec/at-spi-bus-launcher --launch-immediately
+   2050 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus
+   2056 /usr/bin/gnome-shell
+   2116 /usr/libexec/gnome-shell-calendar-server
+   2122 /usr/libexec/evolution-source-registry
+   2127 /usr/libexec/gvfs-udisks2-volume-monitor
+   2132 /usr/libexec/goa-daemon
+   2135 /usr/libexec/gvfs-goa-volume-monitor
+   2138 /usr/libexec/evolution-calendar-factory
+   2149 /usr/libexec/goa-identity-service
+   2153 /usr/libexec/gvfs-mtp-volume-monitor
+   2162 /usr/libexec/gvfs-gphoto2-volume-monitor
+   2165 /usr/libexec/dconf-service
+   2169 /usr/libexec/evolution-addressbook-factory
+   2175 /usr/libexec/gvfs-afc-volume-monitor
+   2195 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   2197 /usr/libexec/at-spi2-registryd --use-gnome-session
+   2213 /usr/libexec/gvfsd-trash --spawner :1.14 /org/gtk/gvfs/exec_spaw/0
+   2220 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+   2221 /usr/libexec/gsd-a11y-settings
+   2223 /usr/bin/ibus-daemon --panel disable
+   2224 /usr/libexec/gsd-color
+   2226 /usr/libexec/gsd-datetime
+   2228 /usr/libexec/gsd-housekeeping
+   2231 /usr/libexec/gsd-keyboard
+   2235 /usr/libexec/gsd-media-keys
+   2238 /usr/libexec/gsd-power
+   2242 /usr/libexec/gsd-print-notifications
+   2246 /usr/libexec/gsd-rfkill
+   2247 /usr/libexec/gsd-screensaver-proxy
+   2248 /usr/libexec/gsd-sharing
+   2249 /usr/libexec/gsd-smartcard
+   2250 /usr/libexec/gsd-sound
+   2252 /usr/libexec/gsd-wacom
+   2276 /usr/libexec/evolution-data-server/evolution-alarm-notify
+   2299 /usr/libexec/gsd-disk-utility-notify
+   2346 /usr/libexec/ibus-dconf
+   2352 /usr/libexec/ibus-extension-gtk3
+   2356 /usr/libexec/ibus-portal
+   2369 /usr/libexec/gsd-printer
+   2384 /usr/libexec/ibus-engine-simple
+   2397 /usr/libexec/tracker-miner-fs-3
+   2410 /usr/libexec/xdg-desktop-portal
+   2421 /usr/libexec/xdg-desktop-portal-gnome
+   2432 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+   2455 /snap/snapd-desktop-integration/83/usr/bin/snapd-desktop-integration
+   2458 /usr/libexec/xdg-desktop-portal-gtk
+   2536 /snap/snapd-desktop-integration/83/usr/bin/snapd-desktop-integration
+   2572 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1920:1080:1:27:0:70:0:0
+   2599 /usr/libexec/gvfsd-metadata
+   2623 /usr/bin/python3 /usr/bin/gnome-terminal --wait
+   2626 /usr/bin/gnome-terminal.real --wait
+   2631 /usr/libexec/gnome-terminal-server
+   2649 bash
+   2835 /opt/google/chrome/chrome
+   2840 cat
+   2841 cat
+   2843 /opt/google/chrome/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/viox/.config/google-chrome/Crash Reports --metrics-dir=/home/viox/.config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.4 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=122.0.6261.128 --initial-client-fd=5 --shared-client-connection
+   2845 /opt/google/chrome/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/viox/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.4 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=122.0.6261.128 --initial-client-fd=4 --shared-client-connection
+   2851 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable
+   2852 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable
+   2854 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable
+   2865 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.RUFPK2 -listen 4 -listen 5 -displayfd 6 -initfd 7
+   2892 /usr/libexec/gsd-xsettings
+   2929 /usr/libexec/ibus-x11
+   2948 /opt/google/chrome/chrome --type=gpu-process --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   2951 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   2960 /opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=utility --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3014 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=7 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=63089921 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3015 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --extension-process --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=63091651 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3146 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=68918257 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3156 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=12 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=69064349 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3180 tmux
+   3182 tmux
+   3431 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=15 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=73765054 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+   3657 -/bin/bash
+   3690 -/bin/bash
+   3736 -/bin/bash
+   3804 -/bin/bash
+   3922 -/bin/bash
+   4059 -/bin/bash
+   4239 -/bin/bash
+   4414 -/bin/bash
+   4588 -/bin/bash
+   4744 -/bin/bash
+   4913 -/bin/bash
+   5064 -/bin/bash
+   5207 -/bin/bash
+   5375 -/bin/bash
+   6464 /snap/nvim/2819/usr/bin/nvim
+   6494 /snap/nvim/2819/usr/bin/nvim --embed
+   6661 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+   6689 java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.protocol=true -Dlog.level=ALL -javaagent:/home/viox/.local/share/nvim/mason/packages/jdtls/lombok.jar -Xms1g --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED -jar /home/viox/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar -configuration /home/viox/.local/share/nvim/mason/packages/jdtls/config_linux -data /home/viox/.local/share/nvim/site/java/workspace-root/tutorial
+   6905 update-notifier
+   7501 /snap/nvim/2819/usr/bin/nvim
+   7528 /snap/nvim/2819/usr/bin/nvim --embed
+   7632 node /home/viox/.local/share/nvim/mason/bin/bash-language-server start
+  14873 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=20 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=380445741 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+  14965 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=24 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=382160824 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+  14974 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+  14988 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=27 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=382854332 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+  22158 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=2843 --enable-crash-reporter=ce91fe3a-2880-43b8-bf30-289838135baf, --extension-process --change-stack-guard-on-fork=enable --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=36 --time-ticks-at-unix-epoch=-1710584240021600 --launch-time-ticks=653624109 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,7317946405971882271,6371900455839190565,262144 --variations-seed-version=20240315-050116.954000
+  22517 /bin/bash ./1_script.sh
+  22521 ps -u viox -o pid,cmd

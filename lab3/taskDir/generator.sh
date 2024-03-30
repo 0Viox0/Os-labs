@@ -1,7 +1,11 @@
 #!/bin/bash
 
 pipe=hehe
+
 mkfifo "$pipe"
+mkfifo toGeneratorMessage
+
+touch ./createdFolders.txt
 
 ./handler.sh &
 
@@ -45,5 +49,5 @@ rm -f "$pipe"
 rm -f ./toGeneratorMessage
 rm -f ./createdFolders.txt
 
-kill $recentPid
 kill $recentPid2
+kill $recentPid

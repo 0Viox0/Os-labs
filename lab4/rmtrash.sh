@@ -38,13 +38,15 @@ ln "$filename" "$trashDir/$linkName" || {
     exit 1
 }
 
+actuallPath=$(realpath "$filename")
+
 rm -f "$filename" 2>/dev/null || {
     echo "failed to delete original file: '$filename' but the hard link was created successfully."
     rm -f "$trashDir/$linkName"
     exit 1
 }
 
-echo "$(realpath "$filename") $linkName" >> "$logFile" || {
+echo "$actuallPath $linkName" >> "$logFile" || {
     echo "failed to write to log file '$logFile'."
     exit 1
 }

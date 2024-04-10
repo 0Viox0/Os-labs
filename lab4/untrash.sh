@@ -32,18 +32,18 @@ while IFS= read -r line; do
 
             if [ -d "$(dirname "$file_path")" ]; then
                 if ln "$HOME/.trash/$file_name" "$file_path" 2>/dev/null; then
-                    echo "File '$file_name' successfully restored to '$file_path'."
+                    echo "File '$filename' successfully restored to '$file_path'."
                     rm "$HOME/.trash/$file_name"
                     sed -i "\~${line//\//\\/}~d" "$trash_log"
                 else
-                    echo "Error: Failed to create a hard link for file '$file_name' in directory '$(dirname "$file_path")'."
-                    read -p "Do you want to rename the file before restoring? (yes/no): " rename_choice
+                    echo "Failed to create a hard link for file '$filename' in directory '$(dirname "$file_path")'."
+                    read -p "Do you want to rename the file before restoring? (yes/no): " rename_choice <&3
 
                     case "$rename_choice" in
                         yes)
-                            read -p "Enter new filename: " new_filename
+                            read -p "Enter new filename: " new_filename <&3
                             if ln "$HOME/.trash/$file_name" "$(dirname "$file_path")/$new_filename" 2>/dev/null; then
-                                echo "File '$file_name' successfully restored as '$new_filename' in directory '$(dirname "$file_path")'."
+                                echo "File '$new_filename' successfully restored as '$new_filename' in directory '$(dirname "$file_path")'."
 
                                 rm "$HOME/.trash/$file_name"
                                 sed -i "\~${line//\//\\/}~d" "$trash_log"
@@ -62,7 +62,7 @@ while IFS= read -r line; do
                 echo "File '$file_name' will be restored to the home directory."
 
                 if ln "$HOME/.trash/$file_name" "$HOME/$file_name" 2>/dev/null; then
-                    echo "File '$file_name' successfully restored to '$HOME'."
+                    echo "File '$filename' successfully restored to '$HOME'."
                     rm "$HOME/.trash/$file_name"
                     sed -i "\~${line//\//\\/}~d" "$trash_log"
                 else

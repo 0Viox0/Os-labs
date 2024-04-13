@@ -5,7 +5,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-filename=$1
+filename="$1"
 trashDir="$HOME/.trash"
 logFile="$HOME/.trash.log"
 
@@ -33,14 +33,14 @@ else
     linkName="0"
 fi
 
-ln "$filename" "$trashDir/$linkName" || {
+ln -- "$filename" "$trashDir/$linkName" || {
     echo "failed to create a hard link for '$filename'."
     exit 1
 }
 
-actuallPath=$(realpath "$filename")
+actuallPath=$(realpath -- "$filename")
 
-rm -f "$filename" 2>/dev/null || {
+rm -f -- "$filename" 2>/dev/null || {
     echo "failed to delete original file: '$filename' but the hard link was created successfully."
     rm -f "$trashDir/$linkName"
     exit 1

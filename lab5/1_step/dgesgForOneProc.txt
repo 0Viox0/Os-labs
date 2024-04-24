@@ -1,0 +1,19 @@
+==> mem.bash <==
+		echo "Array size: ${#array[@]}" >> report.log
+	fi
+done
+
+==> mem.bash <==
+		echo "Array size: ${#array[@]}" >> report.log
+	fi
+done
+
+==> mem.bash <==
+		echo "Array size: ${#array[@]}" >> report.log
+	fi
+done
+
+==> mem.bash <==
+		echo "Array size: ${#array[@]}" >> report.log
+	fi
+done

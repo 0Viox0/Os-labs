@@ -1,0 +1,3 @@
+[ 6157.502408] [ 135402]  1000 135402   623224   341888  5038080   278944             0 mem.bash
+[ 6157.502418] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-71457ba0-51ca-4c9e-9f90-05d513978d57.scope,task=mem.bash,pid=135402,uid=1000
+[ 6157.502429] Out of memory: Killed process 135402 (mem.bash) total-vm:2492896kB, anon-rss:1367424kB, file-rss:128kB, shmem-rss:0kB, UID:1000 pgtables:4920kB oom_score_adj:0

@@ -1,76 +1,12 @@
-#define FUSE_USE_VERSION 30
+#include "storage/telegram_message_api.h"
 
-#include <fuse/fuse.h>
+int main() {
+    struct tel_file file = {.type = TEL_FILE,
+                            .name = "my first file",
+                            .tags = "directory name: /",
+                            .content = "this is some random content"};
 
-#include <errno.h>
-#include <fcntl.h>
-#include <fuse.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <time.h>
-#include <unistd.h>
-
-#include "../include/helperStuff.h"
-
-static int do_getattr(const char *path, struct stat *st) {
-    st->st_uid = getuid();
-    st->st_gid = getgid();
-
-    st->st_atime = time(NULL);
-    st->st_mtime = time(NULL);
-
-    if (strcmp(path, "/") == 0) {
-        st->st_mode = S_IFDIR | 0755;
-        st->st_nlink = 2;
-    } else {
-        st->st_mode = S_IFREG | 0644;
-        st->st_nlink = 1;
-        st->st_size = 1024;
-    }
+    create_file(&file);
 
     return 0;
-}
-
-static int do_readdir(const char *path, void *buffer, fuse_fill_dir_t filler,
-                      off_t offset, struct fuse_file_info *fi) {
-
-    filler(buffer, ".", NULL, 0);
-    filler(buffer, "..", NULL, 0);
-
-    if (strcmp(&path[0], "/") == 0) {
-        filler(buffer, "file54", NULL, 0);
-        filler(buffer, "file349", NULL, 0);
-    }
-
-    return 0;
-}
-
-static int do_read(const char *path, char *buffer, size_t size, off_t offset,
-                   struct fuse_file_info *fi) {
-
-    char file54Text[] = "Hello World From File54!";
-    char file349Text[] = "Hello World From File349!";
-    char *selectedText = NULL;
-
-    if (strcmp(path, "/file54") == 0)
-        selectedText = file54Text;
-    else if (strcmp(path, "/file349") == 0)
-        selectedText = file349Text;
-    else
-        return -1;
-
-    memcpy(buffer, selectedText + offset, size);
-
-    return strlen(selectedText) - offset;
-}
-
-static struct fuse_operations operations = {
-    .getattr = do_getattr, .readdir = do_readdir, .read = do_read};
-
-int main(int argc, char *argv[]) {
-
-    return fuse_main(argc, argv, &operations, NULL);
 }

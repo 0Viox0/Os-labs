@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void send_telegramm_message(const char* fileContent, const char* message) {
-    const char* botToken = "6700495086:AAHnG5E_ipv9ze_hvIf6jVKXnTyT89kGlKM";
-    const char* chatId = "-4270879671";
+void send_telegramm_message(const char* fileContent, const char* message,
+                            const char* file_name) {
+    const char* bot_token = "6700495086:AAHnG5E_ipv9ze_hvIf6jVKXnTyT89kGlKM";
+    const char* chat_id = "-4270879671";
 
     CURL* curl;
     CURLcode res;
@@ -20,20 +21,19 @@ void send_telegramm_message(const char* fileContent, const char* message) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, discard_response);
 
         curl_formadd(&post, &last, CURLFORM_COPYNAME, "chat_id",
-                     CURLFORM_COPYCONTENTS, chatId, CURLFORM_END);
-        curl_formadd(
-            &post, &last, CURLFORM_COPYNAME, "document", CURLFORM_BUFFER,
-            "file.txt",                       // File name for the uploaded file
-            CURLFORM_BUFFERPTR, fileContent,  // Pointer to the file content
-            CURLFORM_BUFFERLENGTH,
-            strlen(fileContent),  // Size of the file content
-            CURLFORM_END);
+                     CURLFORM_COPYCONTENTS, chat_id, CURLFORM_END);
+
+        curl_formadd(&post, &last, CURLFORM_COPYNAME, "document",
+                     CURLFORM_BUFFER, file_name, CURLFORM_BUFFERPTR,
+                     fileContent, CURLFORM_BUFFERLENGTH, strlen(fileContent),
+                     CURLFORM_END);
+
         curl_formadd(&post, &last, CURLFORM_COPYNAME, "caption",
                      CURLFORM_COPYCONTENTS, message, CURLFORM_END);
 
-        char url[1000];
+        char url[500];
         snprintf(url, sizeof(url),
-                 "https://api.telegram.org/bot%s/sendDocument", botToken);
+                 "https://api.telegram.org/bot%s/sendDocument", bot_token);
 
         curl_easy_setopt(curl, CURLOPT_URL, url);
         curl_easy_setopt(curl, CURLOPT_HTTPPOST, post);
@@ -47,6 +47,7 @@ void send_telegramm_message(const char* fileContent, const char* message) {
         curl_easy_cleanup(curl);
         curl_formfree(post);
     }
+
     curl_global_cleanup();
 }
 

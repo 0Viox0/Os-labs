@@ -27,7 +27,7 @@ void create_file(struct tel_file* file) {
     snprintf(message_to_send, message_size, "TYPE: %s\nNAME: %s\nTAGS: %s",
              tel_type_to_string(file->type), file->name, file->tags);
 
-    send_telegramm_message(file->content, message_to_send);
+    send_telegramm_message(file->content, message_to_send, file->name);
 
     free(message_to_send);
 }

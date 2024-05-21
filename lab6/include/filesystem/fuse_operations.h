@@ -1,0 +1,4 @@
+#ifndef FUSEOPERATIONS_H
+#define FUSEOPERATIONS_H
+
+#endif

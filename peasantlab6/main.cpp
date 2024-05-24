@@ -6,6 +6,7 @@
 using namespace std;
 
 // perfect values: 10000 13000
+// to            : 10000 13100
 
 double riemann_zeta(int num_terms, int precision) {
     double zeta = 1.0;

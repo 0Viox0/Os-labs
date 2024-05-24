@@ -6,7 +6,7 @@ enum tel_type { TEL_DIRECTORY, TEL_FILE };
 struct tel_file {
     enum tel_type type;
     const char* name;
-    const char* const tags;
+    const char* const in_directory;
     const char* content;
 };
 
